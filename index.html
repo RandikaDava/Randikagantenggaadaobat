@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="idn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple E-commerce Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ff5722;
+        }
+        
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        
+        header h1 {
+            margin: 0;
+        }
+        
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        nav ul li {
+            display: inline-flex;
+            margin-right: 10px;
+        }
+        
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+        
+        main {
+            padding: 20px;
+        }
+        
+        .product {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+        
+        aside {
+            margin: auto;
+            width: 30%;
+            padding: 20px;
+        }
+        
+        #cart {
+            background-color: #f2f2f2;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        
+        #emptyCartButton {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            background-color: #ff0000;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* Responsive Styling */
+        @media only screen and (max-width: 600px) {
+            #emptyCartButton {
+                font-size: 14px; /* Adjust font size for smaller screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome To Ritme Rhapsody.Store</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Beranda</a></li>
+                <li><a href="#">Produk</a></li>
+                <li><a href="#">Keranjang</a></li>
+                <li><a href="#">Kontak</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <div class="product">
+            <h2>Gitar Elektrik Merk Scorpion Original</h2>
+            <p>Harga: <p>1.280.000</p>
+            <img src="gitar listrik.jpg" alt="Gitar Elektrik Merk Scorpion Original">
+            <button class="addToCartButton" onclick="addToCart('Gitar Elektrik Merk Scorpion Original', 'Rp.1.280.000')">Tambahkan ke Keranjang</button>
+            <a href="https://shp.ee/7pemp9a" class="buy-button">Beli</a>
+        </div>
+        <div class="product">
+            <h2>Ampli Gitar 5 inch Marshall</h2>
+            <p>Harga: Rp.239.000</p>
+            <img src="ampli .jpg" alt="Ampli Gitar 5 inch Marshall">
+            <button class="addToCartButton" onclick="addToCart('Ampli Gitar 5 inch Marshall', 'Rp.239.000')">Tambahkan ke Keranjang</button>
+            <a href="https://id.shp.ee/7F1WMFt" class="buy-button">Beli</a>
+        </div>
+    </main>
+
+    <aside>
+        <div id="cart">
+            <h2>Keranjang</h2>
+            <div id="cartContent"></div>
+            <button id="emptyCartButton" onclick="emptyCart()">Kosongkan Keranjang</button>
+        </div>
+    </aside>
+
+    <script>
+        function addToCart(productName, price) {
+            var cartContent = document.getElementById("cartContent");
+            var newItem = document.createElement("div");
+            newItem.textContent = productName + " - " + price;
+            cartContent.appendChild(newItem);
+            alert('Product ' + productName + ' has been added to the cart.');
+        }
+
+        function emptyCart() {
+            var cartContent = document.getElementById("cartContent");
+            cartContent.innerHTML = ""; // Clear the content of the cart
+            alert('Keranjang telah dikosongkan.');
+        }
+    </script>
+<main>
+    <!-- Product section -->
+    <div class="product">
+        <!-- Product details -->
+    </div>
+    <div class="product">
+        <!-- Product details -->
+    </div>
+
+    <!-- About Us section -->
+    <section id="about">
+        <h2>Tentang Kami</h2>
+        <p>Selamat datang di Ritme Rhapsody Store, Kami adalah destinasi utama Anda untuk semua kebutuhan Alat musik terbaru dan terkini. Dengan komitmen kami untuk menyediakan produk berkualitas tinggi dan layanan pelanggan yang luar biasa, kami bangga menjadi mitra perjalanan alat musik Anda.</p>
+
+        <p>Di Toko Alat Musik kami, kami memahami bahwa setiap langkah Anda membutuhkan peralatan dan hobi yang sesuai. Itulah mengapa kami menyajikan berbagai macam peralatan alat musik dari merek terkemuka di industri Musik. Mulai dari Gitar Listrik  hingga peralatan audio lainnya, kami memiliki pilihan yang sesuai dengan selera dan kebutuhan Anda.</p>
+
+        <p>Kami tidak hanya menawarkan produk berkualitas tinggi, tetapi juga pengalaman belanja yang menyenangkan. Tim kami selalu siap membantu Anda dalam menemukan alat musik yang sempurna untuk setiap kesempatan. Dengan pengetahuan dan keahlian yang kami miliki, kami berkomitmen untuk memberikan saran yang sesuai dengan gaya dan preferensi Anda.</p>
+
+        <p>Selain itu, kepuasan pelanggan adalah prioritas utama kami. Kami selalu berusaha untuk memberikan layanan pelanggan yang ramah, responsif, dan profesional. Kami menghargai setiap pelanggan dan berkomitmen untuk menjaga hubungan jangka panjang dengan Anda.</p>
+
+        <p>Terima kasih telah memilih Toko Kami sebagai mitra perjalanan mode Anda. Kami berharap dapat memberikan pengalaman belanja yang memuaskan dan memenuhi semua.</p>
+    </section>
+</main>
+<section id="contact">
+    <h2>Kontak Kami</h2>
+    <p>Jika Anda memiliki pertanyaan atau memerlukan bantuan, jangan ragu untuk menghubungi kami melalui:</p>
+    <ul>
+        <li>Email: <a href="mailto:info@ritme rapshody.store">info@ritmr raphsody.store</a></li>
+        <li>Telepon: <a href=></a>083820298603</li>
+        <li>Alamat: Jalan raya lembang No. 11, Kota bandung</li>
+        <li>Instagram: <a href="https://www.instagram.com/randikkaaa?igsh=ZGFvcWlxdXgzMGFu">@randikkaaa</a></li>
+    </ul>
+</section>
+
+<footer>
+    <p>Hak Cipta &copy; 2024 RANDIKA DAVA RABANI</p>
+</footer>
+
+
+  
+
